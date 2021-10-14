@@ -1,14 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 import About from './components/About'
+import Footer from './components/Footer'
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="App">
-      <div className="welcome-banner">
-        <p>Welcome to my website! It's built using react and deployed on a heroku pod</p>
+      <Header />
+      <div className="welcome">
+        <p>Welcome to my website! It's still under construction</p>
+        <p>Built using react and deployed on a heroku pod</p>
       </div>
       <About />
+      <Footer />
     </div>
   );
 }
