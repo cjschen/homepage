@@ -5,6 +5,8 @@ import FooterLogo from './FooterLogo'
 export default function Footer() { 
     return (
         <div>
+            <hr />
+            <p>Find out more: </p>
             <FooterLogo 
                 src={github} 
                 name='github' 

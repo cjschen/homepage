@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <Header />
       <div className="welcome">
-        <p>Welcome to my website! It's still under construction</p>
-        <p>Built using react and deployed on a heroku pod</p>
+        <p>Please mind the mess, It's still under construction.</p>
+        <p>Here's a picture of me instead.</p>
       </div>
       <About />
       <Footer />

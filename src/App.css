@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
 
 body {
   background-color: #37293c;
@@ -34,11 +35,17 @@ body {
   display: flex;
   padding: 10px;
   padding-top: 30px;
+  padding-bottom: 0px;
   background-color: #9a9a9a;
 }
-
 h1 {
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 64px;
+  margin: 0px;
+}
+h2 {
   font-family: 'Tajawal', sans-serif;
+  margin: 0px;
 }
 
 .welcome {
