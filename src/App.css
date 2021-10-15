@@ -54,10 +54,23 @@ h2 {
   text-align: center;
 
 }
+
+@media (max-width: 767px) {                  
+  .welcome {
+     display: none;
+  }
+  
+  .header .logo {
+    height: 150px;
+    margin:auto;
+  }
+}
+
 /* About Me page */
-.profile {
-  height: 500px;
+.profile {   
+  max-width: 500px;
   border-radius: 30px;
+  width: -webkit-fill-available;
 }
 
 /* Footer */
