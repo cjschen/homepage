@@ -8,8 +8,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="welcome">
-        <p>Please don't mind the mess, the website is still under construction.</p>
-        <p>Here's a picture of me instead.</p>
+        <p>Please excuse the mess, the website is still under construction and doesn't quite work on mobile.</p>
       </div>
       <About />
       <Footer />
