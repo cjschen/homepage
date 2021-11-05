@@ -13,11 +13,11 @@ But ~~after comming up with a website header a little too playful for a professi
 
 Back when I was still a wee intern at my first testing job, before I knew anything about good testing practice, we had a couple of curious tests right before monthly releases. One that went from running 10 minutes per test run that would balloon to over three hours. I would take my computer home just so I could finish all the verifications on them.
 
-One of our site pages that displayed information for a user about the clients they were managing. 
+One of our site pages that displayed information for a user about the clients they were managing.
 
-Each client was a row in a dynamically loaded table, with one column being the amount of money that contract was worth. At the top of the page, it would show the sum of all the contracts being managed.
+Each client was a row in a dynamically loaded table, with one column being the amount of money that contract was worth. At the top of the page, it would show a summary of the account with the sum of all the contracts being managed and the number of clients.
 
-Usually, a typical user might manage a dozen or two clients, so we had a selenium test which would scroll down to the bottom. The Selenium test was written using the Page Object Model, and we'd set up the Elements like this. 
+Usually, a typical user might manage a couple dozen clients, so we had a selenium test which would scroll down to the bottom. The Selenium test was written using the Page Object Model, and we'd set up the Elements like this. 
 
 ```java
 import helpers.elementExists;
@@ -65,7 +65,7 @@ This meant that the test now takes around 3 hours to finish! Why was this? Well 
 
 #### That Spinner
 
-First of all, checking for the spinner extremely inefficient
+First of all, checking for the spinner extremely inefficient.
 
 Taking a closer look at the `elementExists` function, was a wrapper around a `waitForElement`, with multiple long waits and retries. 
 
@@ -102,7 +102,7 @@ The fix was easy
 
 Secondly, there was the automatic reloading that Selenium does
 
-Virender Singh at ToolsQA has written a much better technical how-to writeup than I will provide here. 
+Virender Singh at ToolsQA has written a much better technical how-to writeup than I will provide here.  https://www.toolsqa.com/selenium-webdriver/cachelookup-in-pageobjectmodel/
 
 The jist of it is that to accomodate dynamic websites, every time a WebElement is used, FindElement is triggered in order to look up the latest version of the Web Element.
 
@@ -179,40 +179,63 @@ Here's what I've learned since then:
 
 Taking a test down from three hours to half an hour is definitely a grand feat, but no single e2e test should take that long to begin with. 
 
-This is also not the sort of test that I would automate using an e2e UI test. 
+Automated testing isn't the same as functional testing and functional testing is more complicated than "does this work". While I will talk later about why this test was written this way, it was written like someone who thought like a person, and not like a computer. 
+
+"What Do I do to make sure the site is working properly? I should make sure all the numbers add up correctly" is a very easy statement to think, but in reality this test is testing many things.
+
+This test was testing many things, many of which I would not do in a UI test today.
+
+UI tests are expensive in time, computing resources and with paid testing infrastructure like Saucelabs, Firebase Test Lab and cypress dashboard, in terms of money too. That's why modern testing best practices dictate more unit tests, a good amount of integration tests, and very minimal e2e UI tests and manual testing. It's commonly called the test pyramid https://www.ministryoftesting.com/dojo/lessons/the-mobile-test-pyramid
+
+Luckily, this test didn't commit the sin of trying to check everything in one giant long test, but there was still quite a lot. 
+
+Today, I would break out this test into a performance or load test, a backend integration test verifying that the sum of all the clients's contracts matched the total being returned, an e2e test ensuring that the spinner and infinite scroll funcrtionality worked as intended.
 
 ### Isolate E2E fixtures
-Why did the account blow up with so many clients right before release? I'm not sure, but I'm sure it had to do with more rigorous testing during that week. All I knew was that.
+Why did the account blow up with so many clients right before release? I'm not sure, but I'm sure it had to do with more rigorous testing during that week. All I knew was that it did and that these tests had to pass in order to release, so I did whatever I thought of to make it work.
 
-Later on my manager told me I was wrong and that it would create flaky tests, but that was long after the other intern and I had done it for a while. Oops.
+This expanded to other tests as well. If a test relied on a client being available, I would just pick another random client and switch out the configuration values. Predictably, it often wasn't long before they worke again. Later on my manager told me I was wrong and that it would create flaky tests, but that was long after the other intern and I had done it for a while. Oops.
 
-The tools our team provides to other engineers will automatically create a new user and give them a new project to test on. Afterwards, the user and project are archived accordingly. 
+The tools our team provide to other engineers will automatically create a new user and give them a new project to test on. Afterwards, the user and project are archived accordingly.
 
-One company that Autodesk aquired after us would spin up a whole new database and a whole new backend for every end to end test run!
+One team I work with would spin up a whole new database and a whole new backend for every end to end test run!
 
-As our producs got bigger and more mature and integrated into Autodesk's systems this has become harder though. With the new system, user activation can take a long time and it causes tests to be flaky. The new product is too heavy to spin up a new instance for every run.
+As our producs got bigger and more mature and integrated into Autodesk's systems this has become harder though. With more moving parts and security requirements, user activation can take a long time and it causes tests to be flaky. The new product is too heavy to spin up a new instance for every run.
 
 It's a tradeoff. You'll have to evaluate your own situation to figure out what the best solution for you is.
 
 ### Mentor your interns
 
-I remember checking the commit history, and certainly enough, that test was written by someone I knew was a previous intern.
+I remember checking the commit history, and certainly enough, that test was written by someone I knew was a previous intern. That explained why the test seemed to be written almost like a unit test. It was certainly the way I wrote tests at the beginning of that internship as well.
 
-At the University of Waterloo, in my experience at least, testing jobs are seen as beneath developing jobs, whether they be frontend, backend or infra, but now I wouldn't want to hire an intern with that mindset and I certainly wouldn't let a new tester run amok with bad testing experience.
+Most automation engineers I know started out as testers first before teaching themselves how to code. That means that they usually came in with a good testing foundation.
 
-Most automation engineers I know started out as testers first before teaching themselves how to code. That means that they usually came in with a good testing foundation  
+Waterloo interns, in my experience, are the opposite. We come in with a more developer and engineering mindset. We didn't know any better. They approached it like we were taught in CS 245. Like a Unit Test. Given input X, does Y hold true. Given this webpage, do all the sums on that table add up to the total at the top. While my mentor in that job taught me a lot about good testing practice, it took a while for that to sink in and for me to start applying it to my work. 
 
-"Bro, Approve my PR?" and "Don't worry, I gotchu" were commonly heard between my fellow QA intern and I and I wouldn't be surprised if this is how this code got merged in the first place.
+How was this not caught in PR? Well, when I was young, I would get really defensive over my code. I still do sometimes, and the worst thing is when you pour your heart and soul into code only to be told it's bad and needs to be completely rewritten.
 
-When I was young, I would get really defensive over my code. I still do sometimes, and the worst thing is when you pour your heart and soul into code only to be told it's bad and needs to be completely rewritten.
+"Bro, Approve my PR?" and "Don't worry, I gotchu" were commonly heard between my fellow QA intern and I and I wouldn't be surprised if this is how this code got merged in the first place. Now I know to call out areas I'm uncertain in and make sure someone familiar with that code reviews my PR before I merge.
 
-So while it sounds like I'm kinda blaming the intern, it's not the intern's fault. They didn't know any better. They approached it like we were taught in CS 245. Like a Unit Test. Given input X, does Y hold true. Given this webpage, do all the sums on that table add up to the total at the top.
+So keep a close eye on your interns! You don't know what, brilliant or bad, they could be sneaking into your code base.
 
-### Promote a good testing culture 
+### Promote a good testing culture
 
 
+I mentioned the testing pyramid earlier, but frankly i couldn't tell you about the state of unit testing in that codebase. I know one team was very proud of their 100% unit test coverage, but I only knew that because I had a friend on that team and I was interested in what they were working on so I asked to try a ticket or two. 
 
-In our team, we strongly believe developers should own their own end to end tests. 
+Usually, to add classes for automation tests, we'd file jira tickets that would take a couple days to get done, but I didn't know we could do that until halfway through the term. Things would change without warning. I wouldn't understand the features and I wouldn't understand 
+
+There's this good RedHat podcast episode called DevOps Tear Down that Wall https://www.redhat.com/en/command-line-heroes/season-1/devops-tear-down-that-wall. It talks about how in the olden days, devs would throw their code over the wall to operations, and it was now operations's job to make . Little communication or collaboration. Developers wanted to develop as many features as possible as fast as possible with no regard to quality, which was strictly opposed to Operation's goal of stability which incentivized as little change as possible. 
+
+While not about QA specifically, this approach is also common to QA teams and it was how we largely operated at my former company. While I ate lunch and got along fabulously with my dev coworkers, I never directly worked with them. It was like there was a tall wall looming between us.  
+
+In my current team, we strongly believe developers should write and own end to end tests for their own features. Of course, this comes with downsides of its own. 
+
+During crunch time, delivering features punctially is always more important than writing e2e tests, and I just went on a diatribe about how those with a development mindset can write awful tests. Yet this gets developers to care more about their quality and makes everyone responsible for the quality of the product, rather than QA being the solely accountable for it. 
+
+We're now shifting to a more centralized QA automation model, although developers still own all their tests and write a good amount. I know another centralized QA team we're colalborating with, doesn't want to let go of their ownership of tests because QA people know how to test the best and know the overall product the best.
+
+I think all these approaches are valid, but no matter what, we should be well past the days of throwing features and tickets over a wall.
 
 ## Sources 
 
