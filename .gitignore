@@ -25,6 +25,3 @@ yarn-error.log*
 
 # VSCode 
 .vscode
-
-# Blog not Built
-*.md
