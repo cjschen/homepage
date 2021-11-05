@@ -94,9 +94,7 @@ static void waitForElement(WebElement elem) throws ExpectedElementNotFoundExcept
 }
 ``` 
 
-But because, it would mean that 
-
-The fix was easy 
+But because we were essentially negating a wait for statement, it would mean that we were waiting for a really long timeout.
 
 #### Caching (or lack thereof)
 
