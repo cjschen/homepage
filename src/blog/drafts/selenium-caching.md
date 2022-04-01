@@ -1,7 +1,3 @@
-Please note that I'm not a spokesperson for the companies I work for and these views are my own and not do not reflect the views of my past or present employers.
-
-# Case Study: Improving runtime of tests using @CacheLookup in Selenium
-
 ## Background
 I'mma be honest. I'm not much of a blogger. I like to write, but it's mostly unpublished fiction wholly separate from my professional life, written first and foremost for myself and maybe a friend. 
 
@@ -10,6 +6,9 @@ In addition to that, I never though I had much to say.
 But ~~after coming up with a website header a little too playful for a professional portfolio and therefore needing a blog~~ after some thought, I thought of the perfect thing. I'm pretty sure it's what got me my internship with PlanGrid, now part of Autodesk, in the first place actually. 
 
 ## The Scenario
+
+![The website](/selenium-demo.png)
+
 
 Back when I was still a wee intern at my first testing job, before I knew anything about good testing practice, we had a couple of curious tests right before monthly releases. One that went from running 10 minutes per test run that would balloon to over three hours. I would take my computer home just so I could finish all the verifications on them.
 
@@ -38,7 +37,7 @@ public WebElement spinner;
 
 And then they'd be used in the test like this,
 
-```java
+~~```java~~
 int clientCount = 0
 // waitForElement returns True if the element exists, False otherwise
 while(clientCount <= namesList.size() && !elementExists(spinner)) {
@@ -99,7 +98,7 @@ But because we were essentially negating a wait for statement, it would mean tha
 #### Caching (or lack thereof)
 
 Secondly, there was the automatic reloading that Selenium does
-
+    
 Virender Singh at ToolsQA has written a much better technical how-to writeup than I will provide here.  https://www.toolsqa.com/selenium-webdriver/cachelookup-in-pageobjectmodel/
 
 The jist of it is that to accommodate dynamic websites, every time a WebElement is used, FindElement is triggered in order to look up the latest version of the Web Element.
@@ -173,7 +172,7 @@ Despite my best effort, caching the page was more addressing a symptom than the 
 
 Here's what I've learned since then: 
 
-### The Test itself was all wrong
+### Test structure
 
 Taking a test down from three hours to half an hour is definitely a grand feat, but no single e2e test should take that long to begin with. 
 
@@ -183,7 +182,7 @@ Automated testing isn't the same as functional testing and functional testing is
 
 This test was testing many things, many of which I would not do in a UI test today.
 
-UI tests are expensive in time, computing resources and with paid testing infrastructure like Saucelabs, Firebase Test Lab and cypress dashboard, in terms of money too. That's why modern testing best practices dictate more unit tests, a good amount of integration tests, and very minimal e2e UI tests and manual testing. It's commonly called the test pyramid https://www.ministryoftesting.com/dojo/lessons/the-mobile-test-pyramid
+UI tests are expensive in time, computing resources and with paid testing infrastructure like Saucelabs, Firebase Test Lab and Cypress dashboard, in terms of money too. That's why modern testing best practices dictate more unit tests, a good amount of integration tests, and very minimal e2e UI tests and manual testing. It's commonly called the test pyramid https://www.ministryoftesting.com/dojo/lessons/the-mobile-test-pyramid
 
 Luckily, this test didn't commit the sin of trying to check everything in one giant long test, but there was still quite a lot. 
 
@@ -202,38 +201,6 @@ As our products got bigger and more mature and integrated into Autodesk's system
 
 It's a tradeoff. You'll have to evaluate your own situation to figure out what the best solution for you is.
 
-### Mentor your interns
-
-I remember checking the commit history, and certainly enough, that test was written by someone I knew was a previous intern. That explained why the test seemed to be written almost like a unit test. It was certainly the way I wrote tests at the beginning of that internship as well.
-
-Most automation engineers I know started out as testers first before teaching themselves how to code. That means that they usually came in with a good testing foundation.
-
-Waterloo interns, in my experience, are the opposite. We come in with a more developer and engineering mindset. We didn't know any better. They approached it like we were taught in CS 245. Like a Unit Test. Given input X, does Y hold true. Given this webpage, do all the sums on that table add up to the total at the top. While my mentor in that job taught me a lot about good testing practice, it took a while for that to sink in and for me to start applying it to my work. 
-
-How was this not caught in PR? Well, when I was young, I would get really defensive over my code. I still do sometimes, and the worst thing is when you pour your heart and soul into code only to be told it's bad and needs to be completely rewritten.
-
-"Bro, Approve my PR?" and "Don't worry, I gotchu" were commonly heard between my fellow QA intern and I and I wouldn't be surprised if this is how this code got merged in the first place. Now I know to call out areas I'm uncertain in and make sure someone familiar with that code reviews my PR before I merge.
-
-So keep a close eye on your interns! You don't know what, brilliant or bad, they could be sneaking into your code base.
-
-### Promote a good testing culture
-
-
-I mentioned the testing pyramid earlier, but frankly i couldn't tell you about the state of unit testing in that codebase. I know one team was very proud of their 100% unit test coverage, but I only knew that because I had a friend on that team and I was interested in what they were working on so I asked to try a ticket or two. 
-
-Usually, to add classes for automation tests, we'd file jira tickets that would take a couple days to get done, but I didn't know we could do that until halfway through the term. Things would change without warning. I wouldn't understand the features and I wouldn't understand 
-
-There's this good RedHat podcast episode called DevOps Tear Down that Wall https://www.redhat.com/en/command-line-heroes/season-1/devops-tear-down-that-wall. It talks about how in the olden days, devs would throw their code over the wall to operations, and it was now operations's job to make . Little communication or collaboration. Developers wanted to develop as many features as possible as fast as possible with no regard to quality, which was strictly opposed to Operation's goal of stability which incentivize as little change as possible. 
-
-While not about QA specifically, this approach is also common to QA teams and it was how we largely operated at my former company. While I ate lunch and got along fabulously with my dev coworkers, I never directly worked with them. It was like there was a tall wall looming between us.  
-
-In my current team, we strongly believe developers should write and own end to end tests for their own features. Of course, this comes with downsides of its own. 
-
-During crunch time, delivering features punctually is always more important than writing e2e tests, and I just went on a diatribe about how those with a development mindset can write awful tests. Yet this gets developers to care more about their quality and makes everyone responsible for the quality of the product, rather than QA being the solely accountable for it. 
-
-We're now shifting to a more centralized QA automation model, although developers still own all their tests and write a good amount. I know another centralized QA team we're collaborating with, doesn't want to let go of their ownership of tests because QA people know how to test the best and know the overall product the best.
-
-I think all these approaches are valid, but no matter what, we should be well past the days of throwing features and tickets over a wall.
 
 ## Sources 
 
