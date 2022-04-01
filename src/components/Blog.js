@@ -1,9 +1,14 @@
-import '../App.css';
+import BlogPost from "./BlogPost";
+import posts from "../blog/posts.js"
+import { useParams } from "react-router";
 
-export default function Blog() {
-  return (
-    <div>
-    </div>
+export default function Blogs() {
+  let { id } = useParams()
+
+  return ( <div className="blog">
+    <BlogPost url={id} {...posts[id]} full={true}/>
+
+  </div>
   );
 }
 
