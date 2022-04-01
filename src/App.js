@@ -23,7 +23,7 @@ function App() {
           <div className="header-container">
             <img className="logo jellyfish" src={jellyfish} alt="jellyfish from stockio.com" />
             <div className="welcome">
-              <h1> ConsistentJellyfish</h1>
+              <h1> CreativeJellyfish</h1>
               <h2> Powered by React and Heroku</h2>
             </div>
             <img className="logo" src={avatar} alt="profile" />
