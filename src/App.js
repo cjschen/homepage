@@ -14,6 +14,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import Resume from './components/Resume';
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
             <li>
               <Link to="/blogs">Blog</Link>
             </li>
+            <li>
+              <Link to="/resume">Resume</Link>
+            </li>
           </ul>
         </nav>
         <img src={construction} alt="construction" style={{ "maxWidth": "300px" }} />
@@ -54,6 +58,9 @@ function App() {
           </Route>
           <Route path="/blog-posts/1">
             <AprilFools />
+          </Route>
+          <Route path="/resume">
+            <Resume />
           </Route>
         </Switch>
         <Footer />

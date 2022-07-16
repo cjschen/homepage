@@ -1,0 +1,16 @@
+{
+    "work": [
+        {
+            "employer": "Autodesk",
+            "dates": "Aug 2019 - Present",
+            "title": "Platform Engineer",
+            "experience": [
+                "Worked on and CI functions and pipelines for better test automation practices",
+                "Developed internal python flask services backed by AWS components ",
+                "Built and maintained packages for consumption by Cypress and Python E2E tests",
+                "Mentored multiple interns, junior engineers and SDETs in good development practices"
+            ]
+        }
+    ],
+    "education": []
+}
