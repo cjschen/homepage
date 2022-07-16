@@ -201,3 +201,15 @@ nav li:hover {
 .blog-header p {
   margin: 5px;
 }
+
+/* Resume */
+
+.work {
+  text-align: left;
+}
+.work ul {
+  margin: 0px;
+}
+.work .section-header {
+  text-align: center;
+}
