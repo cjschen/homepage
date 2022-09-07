@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/homepage/static/css/main.5b6c908d.chunk.css",
+    "main.js": "/homepage/static/js/main.05cb6efb.chunk.js",
+    "main.js.map": "/homepage/static/js/main.05cb6efb.chunk.js.map",
+    "runtime-main.js": "/homepage/static/js/runtime-main.0fc7e92f.js",
+    "runtime-main.js.map": "/homepage/static/js/runtime-main.0fc7e92f.js.map",
+    "static/js/2.c2253b35.chunk.js": "/homepage/static/js/2.c2253b35.chunk.js",
+    "static/js/2.c2253b35.chunk.js.map": "/homepage/static/js/2.c2253b35.chunk.js.map",
+    "static/js/3.d08acce5.chunk.js": "/homepage/static/js/3.d08acce5.chunk.js",
+    "static/js/3.d08acce5.chunk.js.map": "/homepage/static/js/3.d08acce5.chunk.js.map",
+    "static/js/4.ac50879d.chunk.js": "/homepage/static/js/4.ac50879d.chunk.js",
+    "static/js/4.ac50879d.chunk.js.map": "/homepage/static/js/4.ac50879d.chunk.js.map",
+    "static/js/5.c2225e33.chunk.js": "/homepage/static/js/5.c2225e33.chunk.js",
+    "static/js/5.c2225e33.chunk.js.map": "/homepage/static/js/5.c2225e33.chunk.js.map",
+    "static/js/6.2c626f99.chunk.js": "/homepage/static/js/6.2c626f99.chunk.js",
+    "static/js/6.2c626f99.chunk.js.map": "/homepage/static/js/6.2c626f99.chunk.js.map",
+    "index.html": "/homepage/index.html",
+    "static/css/main.5b6c908d.chunk.css.map": "/homepage/static/css/main.5b6c908d.chunk.css.map",
+    "static/js/2.c2253b35.chunk.js.LICENSE.txt": "/homepage/static/js/2.c2253b35.chunk.js.LICENSE.txt",
+    "static/media/Affirmative Action.md": "/homepage/static/media/Affirmative Action.0cbd04a9.md",
+    "static/media/avatar-grey.53818be5.png": "/homepage/static/media/avatar-grey.53818be5.png",
+    "static/media/construction.4268c714.png": "/homepage/static/media/construction.4268c714.png",
+    "static/media/github-logo.04be58c1.svg": "/homepage/static/media/github-logo.04be58c1.svg",
+    "static/media/jellyfish.e4c124e0.svg": "/homepage/static/media/jellyfish.e4c124e0.svg",
+    "static/media/linkedin-logo.27a3f479.svg": "/homepage/static/media/linkedin-logo.27a3f479.svg",
+    "static/media/profile.b1bd2ea9.jpg": "/homepage/static/media/profile.b1bd2ea9.jpg",
+    "static/media/selenium-caching.md": "/homepage/static/media/selenium-caching.f02aaf46.md",
+    "static/media/test-culture.md": "/homepage/static/media/test-culture.e63f41b0.md"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0fc7e92f.js",
+    "static/js/2.c2253b35.chunk.js",
+    "static/css/main.5b6c908d.chunk.css",
+    "static/js/main.05cb6efb.chunk.js"
+  ]
+}
