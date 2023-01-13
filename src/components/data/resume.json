@@ -1,16 +1,64 @@
 {
     "work": [
         {
-            "employer": "Autodesk",
-            "dates": "Aug 2019 - Present",
+            "employer": "Autodesk (formerly PlanGrid)",
+            "dates": "Sept 2018 - Dec 2018, Aug 2019 - Present",
             "title": "Platform Engineer",
             "experience": [
                 "Worked on and CI functions and pipelines for better test automation practices",
                 "Developed internal python flask services backed by AWS components ",
                 "Built and maintained packages for consumption by Cypress and Python E2E tests",
+                "Organized and Led Backend Town Hall, a forum for backend engineers to discuss and shared issues",
                 "Mentored multiple interns, junior engineers and SDETs in good development practices"
+            ]
+        },
+        {
+            "employer": "Future Advisor",
+            "dates": "Jan 2018 - April 2018",
+            "title": "Engineering Intern",
+            "experience": [
+                "Developed, maintained and supervised Selenium tests",
+                "Reduced run time of one test from 3 hours to 25 min"
+            ]
+        },
+        {
+            "employer": "Toronto Transit Commission",
+            "title": "Co-op Student ",
+            "dates": "May 2017 - Aug 2017",
+            "experience": [
+                "Consolidated existing tools into an ASP.NET website with an underlying framework "
+            ]
+        },
+        {
+            "employer": "Royal Bank of Canada",
+            "title": "Security Data Analyst",
+            "dates": "Sept 2016 - Dec 2016",
+            "experience": [
+                "Developed the front-end component of a data visualization app with D3.js "
+            ]
+        },
+        {
+            "employer": "New Signature",
+            "title": "Mobile Developer",
+            "dates": "Jan 2016 - Apr 2016",
+            "experience": [
+                "Implemented an entire Mobile Application according to client specifications in C# .NET with another intern"
+            ]
+        },
+        {
+            "employer": "Evermight",
+            "title": "Developer",
+            "dates": "May 2015 - Aug 2015",
+            "experience": [
+                "Used the Facebook and Twitter API to build a social media dashboard in PHP"
             ]
         }
     ],
-    "education": []
+    "education": [
+        {
+            "place": "University of Waterloo",
+            "degree": "Bachelor's Degree, Honours Computer Science",
+            "dates": "Sept 2014 - June 2019"
+        }
+    ]
 }
