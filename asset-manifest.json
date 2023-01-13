@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/homepage/static/css/main.5b6c908d.chunk.css",
+    "main.css": "/homepage/static/css/main.1ac7d391.chunk.css",
     "main.js": "/homepage/static/js/main.05cb6efb.chunk.js",
     "main.js.map": "/homepage/static/js/main.05cb6efb.chunk.js.map",
     "runtime-main.js": "/homepage/static/js/runtime-main.0fc7e92f.js",
@@ -16,7 +16,7 @@
     "static/js/6.2c626f99.chunk.js": "/homepage/static/js/6.2c626f99.chunk.js",
     "static/js/6.2c626f99.chunk.js.map": "/homepage/static/js/6.2c626f99.chunk.js.map",
     "index.html": "/homepage/index.html",
-    "static/css/main.5b6c908d.chunk.css.map": "/homepage/static/css/main.5b6c908d.chunk.css.map",
+    "static/css/main.1ac7d391.chunk.css.map": "/homepage/static/css/main.1ac7d391.chunk.css.map",
     "static/js/2.c2253b35.chunk.js.LICENSE.txt": "/homepage/static/js/2.c2253b35.chunk.js.LICENSE.txt",
     "static/media/Affirmative Action.md": "/homepage/static/media/Affirmative Action.0cbd04a9.md",
     "static/media/avatar-grey.53818be5.png": "/homepage/static/media/avatar-grey.53818be5.png",
@@ -31,7 +31,7 @@
   "entrypoints": [
     "static/js/runtime-main.0fc7e92f.js",
     "static/js/2.c2253b35.chunk.js",
-    "static/css/main.5b6c908d.chunk.css",
+    "static/css/main.1ac7d391.chunk.css",
     "static/js/main.05cb6efb.chunk.js"
   ]
 }
