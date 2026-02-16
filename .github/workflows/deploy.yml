@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{secrets.DEPLOYMENT_PAT}}
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
@@ -23,12 +21,12 @@ jobs:
         run: npm install
         env:
           CI: false
-          # git remote set-url origin https://cjschen:${{ secrets.DEPLOYMENT_PAT }}@github.com/${{ github.repository }}.git
 
       - name: Configure Git
         run: |
           git config --local user.name "${{ github.actor }}"
           git config --local user.email "${{ github.actor }}@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.DEPLOY_PAT_CLASSIC }}@github.com/${{ github.repository }}.git
 
       - name: Run deploy script
         run: npm run deploy -- -m "Deploy React app to GitHub Pages"
@@ -36,4 +34,4 @@ jobs:
           token: ${{secrets.DEPLOYMENT_PAT}}
         env:
           CI: false
-          GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_PAT }}
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_PAT_CLASSIC }}
