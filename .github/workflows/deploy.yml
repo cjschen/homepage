@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        # with:
-        #   token: ${{secrets.DEPLOYMENT_PAT}}
+        with:
+          token: ${{secrets.DEPLOYMENT_PAT}}
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
@@ -32,8 +32,8 @@ jobs:
 
       - name: Run deploy script
         run: npm run deploy -- -m "Deploy React app to GitHub Pages"
-        # with:
-        #   token: ${{secrets.DEPLOYMENT_PAT}}
+        with:
+          token: ${{secrets.DEPLOYMENT_PAT}}
         env:
           CI: false
           GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_PAT }}
