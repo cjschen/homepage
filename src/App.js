@@ -32,10 +32,10 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/homepage/">Home</Link>
             </li>
             <li>
-              <Link to="/blogs">Blog</Link>
+              <Link to="/homepage/blogs">Blog</Link>
             </li>
           </ul>
         </nav>
@@ -43,10 +43,10 @@ function App() {
         {/* <div className="section center-text"> <p>Welcome to my blog!</p> <p>I write about Test Automation and my experience as a female engineer and immigrant. My posts are entirely my own and do not reflect the views of my employer or anyone else.</p>
         </div> */}
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/blog/:id" element={<Blog />} />
-          <Route path="/blog-posts/1" element={<AprilFools />} />
+          <Route exact path="/homepage/" element={<Home />} />
+          <Route path="/homepage/blogs" element={<Blogs />} />
+          <Route path="/homepage/blog/:id" element={<Blog />} />
+          <Route path="/homepage/blog-posts/1" element={<AprilFools />} />
         </Routes>
         
         <Footer />
