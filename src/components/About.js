@@ -7,10 +7,10 @@ export default function About() {
             <div className="section about-me">
                 <img src={profile} alt={profile} className="profile" />
                 <div>
-                    <p>I'm CJ Chen and I'm an Automation Platform Engineer at Autodesk.</p>
+                    <p>I'm CJ Chen and I'm a Platform Engineer at Autodesk.</p>
                     <p>Born in Shanghai, raised in Bonn and Toronto. Currently based out of San Francisco</p>
-                    <p>I am passionate about good testing practices and personal development.</p>
-                    <p>Experienced in Python, React, Cypress, CI/CD</p>
+                    <p>I am passionate about building robust and scalable tooling and backend platforms.</p>
+                    <p>Experienced in Python, React, typescript, CI/CD, DevEx and DevOps</p>
                 </div>
             </div>
         </div>)

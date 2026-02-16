@@ -1,0 +1,42 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["master", "action"]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Prevent using the default GITHUB_TOKEN credentials so we can push with the PAT
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          CI: false
+
+      - name: Build
+        run: npm run build
+        env:
+          CI: false
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # Use the classic PAT stored in the repository secrets
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages
+          # Optional: set commit author
+          user_name: cjschen
+          user_email: cjschen@users.noreply.github.com
