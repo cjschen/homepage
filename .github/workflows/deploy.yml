@@ -10,7 +10,27 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Build and Deploy React app to GitHub Pages
-      uses: npm run deploy
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm install
+        env:
+          CI: false
+
+      - name: Configure Git
+        run: |
+          git config --local user.name "${{ github.actor }}"
+          git config --local user.email "${{ github.actor }}@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.DEPLOYMENT_PAT }}@github.com/${{ github.repository }}.git
+
+      - name: Run deploy script
+        run: npm run deploy -- -m "Deploy React app to GitHub Pages"
+        env:
+          CI: false
+          GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_PAT }}
