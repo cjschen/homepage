@@ -10,7 +10,7 @@ export default function About() {
                     <p>I'm CJ Chen and I'm an Automation Platform Engineer at Autodesk.</p>
                     <p>Born in Shanghai, raised in Bonn and Toronto. Currently based out of San Francisco</p>
                     <p>I am passionate about good testing practices and personal development.</p>
-                    <p>Experienced in Python, React, Cypress, CI/CD and somewhat in Selenium</p>
+                    <p>Experienced in Python, React, Cypress, CI/CD</p>
                 </div>
             </div>
         </div>)
