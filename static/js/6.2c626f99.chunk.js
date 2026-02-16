@@ -1,2 +1,0 @@
-(this.webpackJsonphomepage=this.webpackJsonphomepage||[]).push([[6],{406:function(e,t,s){"use strict";s.r(t),t.default=s.p+"static/media/test-culture.e63f41b0.md"}}]);
-//# sourceMappingURL=6.2c626f99.chunk.js.map

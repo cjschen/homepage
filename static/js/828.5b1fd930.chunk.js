@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhomepage=self.webpackChunkhomepage||[]).push([[828],{828(e,s,t){e.exports=t.p+"static/media/test-culture.e63f41b06cd8e774bf0d.md"}}]);
