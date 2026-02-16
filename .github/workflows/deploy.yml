@@ -30,8 +30,6 @@ jobs:
 
       - name: Run deploy script
         run: npm run deploy -- -m "Deploy React app to GitHub Pages"
-        with:
-          token: ${{secrets.DEPLOYMENT_PAT}}
         env:
           CI: false
           GITHUB_TOKEN: ${{ secrets.DEPLOY_PAT_CLASSIC }}
