@@ -4,10 +4,10 @@ import AprilFools from './components/AprilFools'
 import Home from './components/Home'
 import Blogs from './components/Blogs'
 import Blog from './components/Blog'
+import Resume from './components/Resume'
 import Footer from './components/Footer'
 import avatar from './res/avatar-grey.png'
 import jellyfish from './res/jellyfish.svg'
-import construction from './res/construction.png'
 import {
   BrowserRouter as Router,
   Routes,
@@ -39,11 +39,11 @@ function App() {
             </li>
           </ul>
         </nav>
-        <img src={construction} alt="construction" style={{ "maxWidth": "300px" }} />
         {/* <div className="section center-text"> <p>Welcome to my blog!</p> <p>I write about Test Automation and my experience as a female engineer and immigrant. My posts are entirely my own and do not reflect the views of my employer or anyone else.</p>
         </div> */}
         <Routes>
           <Route exact path="/homepage/" element={<Home />} />
+          <Route path="/homepage/resume" element={<Resume />} />
           <Route path="/homepage/blogs" element={<Blogs />} />
           <Route path="/homepage/blog/:id" element={<Blog />} />
           <Route path="/homepage/blog-posts/1" element={<AprilFools />} />
