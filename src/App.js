@@ -1,9 +1,7 @@
 
 import './App.css';
-import AprilFools from './components/AprilFools'
 import Home from './components/Home'
-import Blogs from './components/Blogs'
-import Blog from './components/Blog'
+import Resume from './components/Resume'
 import Footer from './components/Footer'
 import avatar from './res/avatar-grey.png'
 import jellyfish from './res/jellyfish.svg'
@@ -34,7 +32,7 @@ function App() {
               <Link to="/homepage/">Home</Link>
             </li>
             <li>
-              <Link to="/homepage/blogs">Blog</Link>
+              <Link to="/homepage/resume">Resume</Link>
             </li>
           </ul>
         </nav>
@@ -42,9 +40,7 @@ function App() {
         </div> */}
         <Routes>
           <Route exact path="/homepage/" element={<Home />} />
-          <Route path="/homepage/blogs" element={<Blogs />} />
-          <Route path="/homepage/blog/:id" element={<Blog />} />
-          <Route path="/homepage/blog-posts/1" element={<AprilFools />} />
+          <Route path="/homepage/resume" element={<Resume />} />
         </Routes>
         
         <Footer />
