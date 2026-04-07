@@ -1,26 +1,21 @@
 {
   "files": {
-    "main.css": "/homepage/static/css/main.a12b1122.css",
-    "main.js": "/homepage/static/js/main.d1203166.js",
-    "static/js/813.b9068c3c.chunk.js": "/homepage/static/js/813.b9068c3c.chunk.js",
-    "static/js/663.9523b44b.chunk.js": "/homepage/static/js/663.9523b44b.chunk.js",
-    "static/js/828.5b1fd930.chunk.js": "/homepage/static/js/828.5b1fd930.chunk.js",
-    "static/js/488.683d811d.chunk.js": "/homepage/static/js/488.683d811d.chunk.js",
+    "main.css": "/homepage/static/css/main.a84bbef5.css",
+    "main.js": "/homepage/static/js/main.08e4b625.js",
+    "static/js/488.305542df.chunk.js": "/homepage/static/js/488.305542df.chunk.js",
     "static/media/avatar-grey.png": "/homepage/static/media/avatar-grey.53818be5af2b4a7eae2d.png",
     "static/media/profile.jpg": "/homepage/static/media/profile.b1bd2ea949f4cdb3d146.jpg",
-    "static/media/selenium-caching.md": "/homepage/static/media/selenium-caching.f02aaf468d9c3f59dc0e.md",
-    "static/media/Affirmative Action.md": "/homepage/static/media/Affirmative Action.0cbd04a9812e7c694837.md",
+    "static/media/resume.pdf": "/homepage/static/media/resume.d01eda4662f93e1e1e0f.pdf",
     "static/media/jellyfish.svg": "/homepage/static/media/jellyfish.e4c124e07b7cd49ef98c4010d6006fcf.svg",
-    "static/media/test-culture.md": "/homepage/static/media/test-culture.e63f41b06cd8e774bf0d.md",
     "static/media/github-logo.svg": "/homepage/static/media/github-logo.04be58c17b3d5e9744424d414240dd85.svg",
     "index.html": "/homepage/index.html",
     "static/media/linkedin-logo.svg": "/homepage/static/media/linkedin-logo.27a3f479ca1bbb0ceef19e395081fb94.svg",
-    "main.a12b1122.css.map": "/homepage/static/css/main.a12b1122.css.map",
-    "main.d1203166.js.map": "/homepage/static/js/main.d1203166.js.map",
-    "488.683d811d.chunk.js.map": "/homepage/static/js/488.683d811d.chunk.js.map"
+    "main.a84bbef5.css.map": "/homepage/static/css/main.a84bbef5.css.map",
+    "main.08e4b625.js.map": "/homepage/static/js/main.08e4b625.js.map",
+    "488.305542df.chunk.js.map": "/homepage/static/js/488.305542df.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a12b1122.css",
-    "static/js/main.d1203166.js"
+    "static/css/main.a84bbef5.css",
+    "static/js/main.08e4b625.js"
   ]
 }
