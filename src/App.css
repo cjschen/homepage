@@ -201,3 +201,67 @@ nav li:hover {
 .blog-header p {
   margin: 5px;
 }
+
+.resume {
+  padding: 10px 30px;
+  text-align: left;
+}
+
+.resume ul {
+  list-style-type: none;
+
+}
+
+.resume .center {
+  display: none;
+}
+
+#about-me, #about-me + p {
+  display: none;
+}
+
+.multicols p span {
+  display: none;
+}
+
+.resume table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.resume h1 {
+  text-align: center;
+}
+
+.resume ul {
+  width: 100%;
+  /* list-style-type: none; */
+  margin: 0;
+  padding: 0;
+}
+
+.resume li {
+  width: 100%;
+  font-family: 'Raleway', sans-serif;;
+}
+
+.resume td {
+  padding: 8px 0;
+}
+
+.resume td:last-child {
+  text-align: end;
+}
+
+.resume .resume-list {
+  padding: 0px 20px;
+  width: auto;
+}
+
+.company {
+  font-size: 24px;
+}
+.position {
+  font-size: 18px;
+}

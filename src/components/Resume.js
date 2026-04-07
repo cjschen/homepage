@@ -1,5 +1,15 @@
+import pdf from '../res/resume.pdf';
+
 export default function Resume() {
   return (
+    <div>    
+      <a href={pdf} target="_blank" rel="noopener noreferrer">
+        Download PDF Here
+      </a>
+
+    {
+    // Mostly Auto-generated from latex resume 
+    }
     <div className="resume">
       <div class="center">
         <p>
@@ -21,9 +31,6 @@ export default function Resume() {
         </p>
       </div>
       <div class="multicols">
-        <p>
-          <span>2</span>
-        </p>
         <h1 id="about-me">About Me</h1>
         <p>
           University of Waterloo educated Platform Engineer with 8 years of
@@ -44,7 +51,7 @@ export default function Resume() {
             <tbody>
               <tr>
                 <td>
-                  <strong>Autodesk Inc</strong>
+                  <strong class="company">Autodesk Inc</strong>
                 </td>
                 <td>San Francisco, CA</td>
               </tr>
@@ -56,7 +63,7 @@ export default function Resume() {
             <tbody>
               <tr>
                 <td>
-                  <strong>Senior Software Engineer</strong>
+                  <strong class="position">Senior Software Engineer</strong>
                 </td>
                 <td>
                   <em>Oct 2022 – Apr 2026</em>
@@ -64,7 +71,7 @@ export default function Resume() {
               </tr>
             </tbody>
           </table>
-          <ul>
+          <ul class="resume-list">
             <li>
               <p>
                 <span>
@@ -131,7 +138,7 @@ export default function Resume() {
                 </span>
               </p>
             </li>
-            <li>table
+            <li>
               <p>
                 <span>
                   {" "}
@@ -152,7 +159,7 @@ export default function Resume() {
             <tbody>
               <tr>
                 <td>
-                  <strong>Software Engineer</strong>
+                  <strong class="position">Software Engineer</strong>
                 </td>
                 <td>
                   <em>Aug 2019 – Oct 2022</em>
@@ -160,7 +167,7 @@ export default function Resume() {
               </tr>
             </tbody>
           </table>
-          <ul>
+          <ul class="resume-list">
             <li>
               <p>
                 <span>
@@ -210,7 +217,7 @@ export default function Resume() {
             <tbody>
               <tr>
                 <td>
-                  <strong>University of Waterloo</strong>
+                  <strong class="company">University of Waterloo</strong>
                 </td>
                 <td>
                   <span>Ontario, Canada</span>
@@ -229,9 +236,6 @@ export default function Resume() {
         </li>
       </ul>
       <div class="multicols*">
-        <p>
-          <span>2</span>
-        </p>
         <h1 id="internships">Internships</h1>
         <ul>
           <li>
@@ -251,7 +255,7 @@ export default function Resume() {
                 </tr>
               </tbody>
             </table>
-            <ul>
+            <ul class="resume-list">
               <li>
                 <p>
                   <span>
@@ -281,7 +285,7 @@ export default function Resume() {
                 </tr>
               </tbody>
             </table>
-            <ul>
+            <ul class="resume-list">
               <li>
                 <p>
                   <span>
@@ -470,6 +474,7 @@ export default function Resume() {
           </li>
         </ul>
       </div>
-    </div>
+ </div>
+   </div>
   );
 }
